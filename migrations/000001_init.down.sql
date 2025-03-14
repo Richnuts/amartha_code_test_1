@@ -1,0 +1,13 @@
+BEGIN;
+
+DROP INDEX IF EXISTS idx_payment_loan_unique;
+
+DROP TABLE IF EXISTS payment;
+
+DROP TABLE IF EXISTS loan;
+
+DROP TYPE IF EXISTS duration_unit;
+
+DROP TABLE IF EXISTS "user";
+
+COMMIT;

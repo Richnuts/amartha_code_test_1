@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "051c86e7-2a77-4bec-b897-098c5a796ec6",
+		"name": "Amartha-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18997486"
+	},
+	"item": [
+		{
+			"name": "Get Outstanding",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-User-ID",
+						"value": "{{user-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{path}}outstanding/:loan-id",
+					"host": [
+						"{{path}}outstanding"
+					],
+					"path": [
+						":loan-id"
+					],
+					"variable": [
+						{
+							"key": "loan-id",
+							"value": "{{loan-id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get IsDeliquent",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-User-ID",
+						"value": "{{user-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{path}}deliquent/:loan-id",
+					"host": [
+						"{{path}}deliquent"
+					],
+					"path": [
+						":loan-id"
+					],
+					"variable": [
+						{
+							"key": "loan-id",
+							"value": "{{loan-id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get BillingLoan",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-User-ID",
+						"value": "{{user-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{path}}loan-schedule/:loan-id",
+					"host": [
+						"{{path}}loan-schedule"
+					],
+					"path": [
+						":loan-id"
+					],
+					"variable": [
+						{
+							"key": "loan-id",
+							"value": "{{loan-id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Make Payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-User-ID",
+						"value": "{{user-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amountPaid\":47\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{path}}{{loan-id}}",
+					"host": [
+						"{{path}}{{loan-id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "user-id",
+			"value": "1bd0d553-e770-4352-90ba-0d5cdda990bf",
+			"type": "string"
+		},
+		{
+			"key": "loan-id",
+			"value": "af21f244-d622-4356-b2fc-479011b49346",
+			"type": "string"
+		},
+		{
+			"key": "path",
+			"value": "http://localhost:9001/billing/",
+			"type": "string"
+		}
+	]
+}
